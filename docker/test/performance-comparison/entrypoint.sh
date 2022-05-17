@@ -161,7 +161,7 @@ ulimit -c unlimited
 cat /proc/sys/kernel/core_pattern
 
 # Start the main comparison script.
-{ \
+{
     time ../download.sh "$REF_PR" "$REF_SHA" "$PR_TO_TEST" "$SHA_TO_TEST" && \
     time stage=configure "$script_path"/compare.sh ; \
 } 2>&1 | ts "$(printf '%%Y-%%m-%%d %%H:%%M:%%S\t')" | tee compare.log
